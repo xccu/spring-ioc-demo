@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="login" class="com.example.ioc.di.LoginImpl"/>
+
+    <!--Setter注入-->
+    <bean id="setterAction" class="com.example.ioc.di.SetterAction">
+        <property name="login" ref="login"></property>
+    </bean>
+    <!--构造函数注入-->
+    <bean id="constructorAction" class="com.example.ioc.di.ConstructorAction">
+        <constructor-arg index="0" ref="login"></constructor-arg>
+    </bean>
+    <!--接口注入-->
+    <bean id="interfaceAction" class="com.example.ioc.di.InterfaceAction">
+    </bean>
+</beans>
